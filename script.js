@@ -67,13 +67,19 @@ function addPastRace(){
 }addPastRace()
 console.log(document.querySelector('#past-races'));
 
-  // Part 7: Create a new .blog-post corresponding to the new city added in Part 6.
+  // Part 7: Create a new .blog-post corresponding to the new city added in Part 6. ISSUE: NOT ALL CSS PROPERTIES WERE INHERITED.
 function addClass (){
   const blogs = document.querySelector(".main");
   const newBlog = document.createElement("div");
-
+  const htag = document.createElement("h2");
+  const ptag = document.createElement("p");
   newBlog.classList.add("blog-post.purple");
-  blogs.appendChild(newBlog)
+  blogs.appendChild(newBlog);
+  htag.textContent = "New York City";
+  ptag.textContent = "Enjoyed a quick block party and car show. Yay!"
+  blogs.appendChild(htag);
+  blogs.appendChild(ptag);
+
 }
 addClass()
 console.log(document.querySelector(".main"))
