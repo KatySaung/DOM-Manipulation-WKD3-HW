@@ -9,6 +9,10 @@ let quotes = [
 
 document.addEventListener("DOMContentLoaded", function(event) {
   // Random quote of the day generator
+ 
+  
+
+
   const randomQuote = function() {
     document.querySelector('#quote-of-the-day').textContent = `"${quotes[Math.floor(Math.random() * quotes.length)]}"`;
   };
@@ -16,14 +20,25 @@ document.addEventListener("DOMContentLoaded", function(event) {
   
   // Do all of your work inside the document.addEventListener  
 
-  // Part 1
+  // Part 1 Change the text of the title to something shorter.
+function headTitle(){
+  const mainTitle = document.querySelector("#main-title");
+ mainTitle.textContent = "Dom Toretto's Homepage";
+}headTitle()
 
+  // Part 2 change the background-color to a new color
+  function chgbkgdColor(){
+  document.body.style.backgroundColor = "lightblue";
+}chgbkgdColor()
 
-  // Part 2
-
-
-  // Part 3
-
+  // Part 3 Select DOM's Favorite Things list and remove the last list item.
+  function removeFav(){
+    const favList = document.querySelector('#favorite-things');
+    if(favList.hasChildNodes()){
+      favList.removeChild(favList.children[5])
+    }
+  }removeFav()
+  console.log(document.querySelector('#favorite-things'));
 
   // Part 4
 
