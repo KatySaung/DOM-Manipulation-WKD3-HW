@@ -27,9 +27,9 @@ function headTitle(){
 }headTitle()
 
   // Part 2 change the background-color to a new color
-  function chgbkgdColor(){
+  function chgBkgdColor(){
   document.body.style.backgroundColor = "lightblue";
-}chgbkgdColor()
+}chgBkgdColor()
 
   // Part 3 Select DOM's Favorite Things list and remove the last list item.
   function removeFav(){
@@ -40,13 +40,28 @@ function headTitle(){
   }removeFav()
   console.log(document.querySelector('#favorite-things'));
 
-  // Part 4
+  // Part 4: Select all .special-title class elements and change their font-sizeto 2rem
+function chgFontSpecials(){
+  const specialTitle = document.querySelectorAll(".special-title");
+  for(let i=0; i<specialTitle.length; i++){
+    specialTitle[i].style.fontSize = "2rem";
+  }
+}
+chgFontSpecials();
 
+console.log(document.querySelectorAll(".special-title"));
 
-  // Part 5
+  // Part 5 Access the Past Races list and remove Chicago.
+function removePastRace(){
+  const pastRaces = document.querySelector('#past-races');
+  if(pastRaces.hasChildNodes()){
+    pastRaces.removeChild(pastRaces.children[3])
+  }
 
+}removePastRace()
+console.log(document.querySelector('#past-races'));
 
-  // Part 6
+  // Part 6: Create a new <li>element, change the new <li>text to the name of a city, and append it to the Past Races list.
 
 
   // Part 7
