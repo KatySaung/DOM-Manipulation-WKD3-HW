@@ -79,13 +79,17 @@ function addClass (){
   ptag.textContent = "Enjoyed a quick block party and car show. Yay!"
   blogs.appendChild(htag);
   blogs.appendChild(ptag);
-
 }
 addClass()
 console.log(document.querySelector(".main"))
 
   // Part 8: add a click event handler. That event handler should use the function randomQuotewhenever #quote-titleis clicked.
 
+  function addEvtListen (){
+    const quote = document.querySelector("#quote-title");
+    const addEvt = document.addEventListener("click",randomQuote); 
+  }
+  addEvtListen()
 
   // Part 9:Iterate through the list of .blog-postclass elements and apply two event handlers to each node. The first event handler should be listening for mouseoutevents while the second handler should be listening for mouseenterevents.The mouseouthandler should toggle the class .purple. The mouseenterhandler should toggle the class .red.
 
