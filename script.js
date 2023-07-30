@@ -8,16 +8,8 @@ let quotes = [
 ];
 
 document.addEventListener("DOMContentLoaded", function(event) {
-  // Random quote of the day generator
- 
-  const randomQuote = function() {
-    document.querySelector('#quote-of-the-day').textContent = `"${quotes[Math.floor(Math.random() * quotes.length)]}"`;
-  };
-  randomQuote();
-  
-  // Do all of your work inside the document.addEventListener  
 
-  // Part 1: Change the text of the title to something shorter.
+    // Part 1: Change the text of the title to something shorter.
 function headTitle(){
   const mainTitle = document.querySelector("#main-title");
  mainTitle.textContent = "Dom Toretto's Homepage";
@@ -83,17 +75,38 @@ function addClass (){
 addClass()
 console.log(document.querySelector(".main"))
 
-  // Part 8: add a click event handler. That event handler should use the function randomQuotewhenever #quote-titleis clicked.
+  // Part 8: add a click event handler. That event handler should use the function randomQuotewhenever #quote-title is clicked.
 
   function addEvtListen (){
-    const quote = document.querySelector("#quote-title");
-    const addEvt = document.addEventListener("click",randomQuote); 
+   const quote = document.querySelectorAll("#quote-title");
+   const addClick = document.addEventListener("click",randomQuote); 
+   
   }
   addEvtListen()
 
-  // Part 9:Iterate through the list of .blog-postclass elements and apply two event handlers to each node. The first event handler should be listening for mouseoutevents while the second handler should be listening for mouseenterevents.The mouseouthandler should toggle the class .purple. The mouseenterhandler should toggle the class .red.
-
-
-
+  // Part 9:Iterate through.blog-postclass elements and apply two event handlers to each node. The mouseouthandler should toggle the class .purple. The mouseenterhandler should toggle the class .red.
+  function blogAddEvt(){
+    const blogs = document.querySelectorAll(".blog-post")
+    blogs.forEach((blogPost) => {
+      blogPost.addEventListener("mouseenter",() =>{
+        blogPost.classList.toggle("purple");
+      });
+      blogPost.addEventListener("mouseout",() =>{
+        blogPost.classList.toggle("red");
+      });
+    })
+  }
+  blogAddEvt();
+  console.log(document.querySelectorAll(".blog-post"));
 
 });
+  
+  // Random quote of the day generator
+  const randomQuote = function() {
+    document.querySelector('#quote-of-the-day').textContent = `"${quotes[Math.floor(Math.random() * quotes.length)]}"`;
+  };
+  randomQuote();
+  
+  // Do all of your work inside the document.addEventListener  
+
+
